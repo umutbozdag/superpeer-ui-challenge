@@ -1,0 +1,75 @@
+@mixin brd-rounded($radius: 999px) {
+  border-radius: $radius!important;
+}
+
+@mixin font-family($family: "Source Sans Pro") {
+  font-family: -apple-system, BlinkMacSystemFont, $family, sans-serif;
+}
+
+@mixin transition($property: all 0.2s ease) {
+  transition: $property;
+}
+
+@mixin shadow($none: false, $shadow: 0 0 0 0.2rem, $color: lighten($primary, 22%)) {
+  @if $none {
+    box-shadow: none;
+  } 
+  @else {
+    box-shadow: $shadow $color;
+  }
+}
+
+@mixin super-button($background, $color, $rounded: false, $border: none) {
+  border: $border;
+  cursor: pointer;
+  outline: none;
+  @include transition;
+  @include font-family;
+
+  background-color: $background;
+  color: $color;
+  border: $border;
+  
+  @if $rounded {
+    @include brd-rounded();
+  }
+}
+
+@mixin super-dropdown($border: 1px solid $grey-40, 
+                        $bg-image: "https://svgur.com/i/PnM.svg", 
+                        $height: 48px, $padding: 15px 16px, 
+                        $bg-color: $white,
+                        $color: $grey-90) {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  outline: 0;
+  border: $border;
+
+  background-image: url($bg-image);
+  background-repeat: no-repeat;
+  background-size: 18px auto;
+  background-position: right 15px center;
+
+  background-color: $bg-color;
+  color: $color;
+
+  padding: $padding;
+  height: $height;
+  line-height: 15px;
+}
+
+@mixin super-input($color: $grey-90, $bg-color: $white, $height: 80%, $font-weight: $fw-400, $font-size: 15px) {
+  @include font-family;
+
+  border: none!important;
+  outline: 0;
+  color: $color;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  height: $height;
+  padding: 0;
+  background-color: $bg-color;
+
+}

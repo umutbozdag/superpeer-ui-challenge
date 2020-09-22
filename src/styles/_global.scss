@@ -1,0 +1,14 @@
+body {
+  background: $grey-10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  
+  font-family: -apple-system, BlinkMacSystemFont, $family, sans-serif;
+  font-size: 15px;
+}
+
+.icon {
+  font-size: 18px;
+}

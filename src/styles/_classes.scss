@@ -1,0 +1,90 @@
+$colors: ("white": $white, 
+          "primary": $primary, 
+          "grey-90": $grey-90,  
+          "grey-80": $grey-80, 
+          "grey-40": $grey-40, 
+          "grey-10": $grey-10);
+
+$font-sizes: ("small": 13px, "normal": 15px, "big": 24px);
+$border-sizes: ("8": 8px, "16": 16px, "rounded": 999px);
+$spacers: ("4": 4px, "8": 8px, "12": 12px, "16": 16px, "24": 24px);
+
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: $color!important;
+  }
+
+  .text-#{$name} {
+    color: $color!important;
+  }
+}
+
+@each $name, $font-size in $font-sizes {
+  .size-#{$name} {
+    font-size: $font-size!important;
+  }
+}
+
+@each $name, $border-size in $border-sizes {
+  .brd-#{$name} {
+    border-radius: $border-size!important;
+  }
+}
+
+@each $name, $spacer in $spacers {
+  .mt-#{$name} {
+    margin-top: $spacer!important;
+  }
+  .mb-#{$name} {
+    margin-bottom: $spacer!important;
+  }
+  .mr-#{$name} {
+    margin-right: $spacer!important;
+  }
+  .ml-#{$name} {
+    margin-left: $spacer!important;
+  }
+}
+
+
+// Classes
+.text-center {
+  text-align: center!important;
+}
+
+.border-primary {
+  border: 1px solid $primary!important;
+}
+
+.w-regular {
+  font-weight: $fw-400!important;
+}
+
+.w-bold {
+  font-weight: $fw-700!important;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-1 {
+  flex: 1!important;
+}
+
+.flex-2 {
+  flex: 2!important;
+}
+
+.w-full {
+  width: 100%!important;
+}
